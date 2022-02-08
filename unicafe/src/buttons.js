@@ -42,12 +42,28 @@ const Buttons = () => {
     }
     return (
       <div>
-       
-    
-      <h1>Current Vibe: {rating}</h1>
-      <h2>Positive: {good} out of {total} - {goodPrecent}%</h2>
-      <h2>Negative: {bad} out of {total} - {badPrecent}%</h2>
-      <h2>Neutral: {neutral} out of {total} - {neutralPrecent}%</h2>
+       <h1>Current Vibe: {rating}</h1>
+        <div>
+        <tr >
+        <td>Positive: {good}</td>
+        <td>out of {total} -</td>
+        <td>{goodPrecent}%</td>
+      </tr>
+      <tr>
+        <td>Negative: {bad}</td>
+        <td> out of {total} -</td>
+        <td>{badPrecent}%</td>
+      </tr>
+      <tr>
+        <td>Neutral: {neutral}</td>
+        <td>out of {total} -</td>
+        <td>{neutralPrecent}%</td>
+      </tr>
+
+        </div>
+        
+
+  
       <h2>Total: {total}</h2>
       </div>
       
