@@ -43,7 +43,9 @@ const Buttons = () => {
     return (
       <div>
        <h1>Current Vibe: {rating}</h1>
-        <div>
+        
+        <table class="center">
+
         <tr >
         <td>Positive: {good}</td>
         <td>out of {total} -</td>
@@ -60,10 +62,8 @@ const Buttons = () => {
         <td>{neutralPrecent}%</td>
       </tr>
 
-        </div>
-        
+        </table>
 
-  
       <h2>Total: {total}</h2>
       </div>
       
