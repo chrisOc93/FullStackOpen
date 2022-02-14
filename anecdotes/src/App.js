@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const App = () => {
   const anecdotes = [
@@ -13,14 +13,23 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  function randomItem () {
+    const randomNumber = Math.floor(Math.random() * anecdotes.length);
+      setSelected(randomNumber);
+   console.log(selected)
+    
+  }
+
+ 
 
   return (
     <div>
-      {anecdotes[selected]}
+      
+      {anecdotes[selected]} <br/>
+      <button onClick={randomItem}>Next Anecdotes</button>
+      
     </div>
   )
 }
 
-
-
-export default App;
+export default App
