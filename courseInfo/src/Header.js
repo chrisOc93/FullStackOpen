@@ -1,7 +1,9 @@
 import './index.css';
+
 const Header = (props) => {
+    console.log(props)
     return(
-        <div className="header"> <h1>{props.courseTitle}</h1> </div>
+        <div className="header"> <h1>{props.course}</h1> </div>
         )
 }
 
