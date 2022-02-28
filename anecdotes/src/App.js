@@ -13,20 +13,46 @@ const App = () => {
   ]
    
   const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0));
+
+  const Likes = () => {
+    if (mostVotes === 0)
+    return (
+      <h1>No Votes yet </h1>
+    )
+    return(
+      <p>{winningAnecdote} with {votes[selected]} votes</p>
+      
+    )
+  }
+
   function randomItem () {
     const randomNumber = Math.floor(Math.random() * anecdotes.length);
-      setSelected(randomNumber);
+    setSelected(randomNumber);
    console.log(selected)
     
   }
 
- 
+  const voteForAnecdote = () => {
+    const copy = [...votes];
+    copy[selected] += 1;
+    setVotes(copy);
+    console.log(copy[selected])
+  }; 
+
+    // gets the highest value from votes 
+  const mostVotes = Math.max(...votes);
+  // uses most votes to set the index of what to display 
+  const winningAnecdote = anecdotes[votes.indexOf(mostVotes)];
 
   return (
     <div>
-      
-      {anecdotes[selected]} <br/>
+      <h1>Random Anecdote</h1>
+      <p>{anecdotes[selected]}</p>
+      <p>has {votes[selected]} votes</p>
+      <button onClick={voteForAnecdote}>Likes</button>
       <button onClick={randomItem}>Next Anecdotes</button>
+     <Likes/>
       
     </div>
   )
